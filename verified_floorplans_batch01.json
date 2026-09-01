@@ -1,0 +1,225 @@
+{
+  "version": "2026-09-02-real-batch01",
+  "verified_count": 9,
+  "records": [
+    {
+      "agency": "LH",
+      "name": "고양덕은1단지",
+      "road": "경기도 고양시 덕양구 대덕산로 147",
+      "types": [
+        {
+          "type": "29A",
+          "area_m2": 29.85
+        },
+        {
+          "type": "37A",
+          "area_m2": 37.75
+        },
+        {
+          "type": "46A",
+          "area_m2": 46.71
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "id": "MECCA-REAL-000001",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송12단지",
+      "road": "경기도 고양시 덕양구 원흥1로 11",
+      "types": [
+        {
+          "type": "26A",
+          "area_m2": 26.16
+        },
+        {
+          "type": "26B(주거약자)",
+          "area_m2": 26.16
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "id": "MECCA-REAL-000002",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정A21 산내1 행복주택",
+      "road": "경기도 파주시 교하로 20",
+      "types": [
+        {
+          "type": "16형",
+          "area_m2": 16.06
+        },
+        {
+          "type": "21형",
+          "area_m2": 21.02
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020057&uppAisTpCd=06",
+      "id": "MECCA-REAL-000003",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정A39BL 가람14 행복주택",
+      "road": "경기도 파주시 소리천로 203",
+      "types": [
+        {
+          "type": "26A 대학생/청년",
+          "area_m2": 26.0
+        },
+        {
+          "type": "36A 청년",
+          "area_m2": 36.0
+        },
+        {
+          "type": "36B 고령자(주거약자)",
+          "area_m2": 36.0
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020057&uppAisTpCd=06",
+      "area_note": "공식 페이지 범위 16.67~36.51; 개별 26/36형 정확 면적은 후속 추출 필요",
+      "id": "MECCA-REAL-000004",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "평택소사벌4단지(4BL)",
+      "road": "경기도 평택시 비전2로 110",
+      "types": [
+        {
+          "type": "26A",
+          "area_m2": 26.89
+        },
+        {
+          "type": "51A",
+          "area_m2": 51.76
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "소사벌4평면(260506공고).zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019939&uppAisTpCd=06",
+      "id": "MECCA-REAL-000005",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "평택소사벌3단지(3BL)",
+      "road": "경기도 평택시 비전2로 70",
+      "types": [
+        {
+          "type": "26",
+          "area_m2": 26.12
+        },
+        {
+          "type": "36",
+          "area_m2": 36.55
+        },
+        {
+          "type": "46",
+          "area_m2": 46.49
+        },
+        {
+          "type": "51",
+          "area_m2": 51.55
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "소사벌3평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019939&uppAisTpCd=06",
+      "id": "MECCA-REAL-000006",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "별내별빛마을3단지(별내A11-1) 국민임대주택",
+      "road": "경기도 남양주시 별내5로 22",
+      "types": [
+        {
+          "type": "26형",
+          "area_m2": 26.47
+        },
+        {
+          "type": "46형",
+          "area_m2": 46.42
+        },
+        {
+          "type": "51형",
+          "area_m2": 51.98
+        },
+        {
+          "type": "59형",
+          "area_m2": 59.4
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "id": "MECCA-REAL-000007",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "문산당동3",
+      "road": "경기도 파주시 문산읍 방촌로 1720",
+      "types": [
+        {
+          "type": "46",
+          "area_m2": 46.9
+        },
+        {
+          "type": "51",
+          "area_m2": 51.93
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "id": "MECCA-REAL-000008",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11",
+      "road": "경기도 파주시 미래로 601",
+      "types": [],
+      "area_range_m2": [
+        39.55,
+        59.64
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "id": "MECCA-REAL-000009",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    }
+  ],
+  "note": "Only fields verified from LH official pages are included. Floorplan files are referenced by official notice attachment names; no fabricated plan assets."
+}

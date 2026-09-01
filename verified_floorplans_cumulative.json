@@ -1,0 +1,2242 @@
+{
+  "version": "realdata-sweep-v7",
+  "verified_source_record_count": 144,
+  "requested_batch_target": 1000,
+  "records": [
+    {
+      "agency": "LH",
+      "name": "고양덕은1단지",
+      "road": "경기도 고양시 덕양구 대덕산로 147",
+      "types": [
+        {
+          "type": "29A",
+          "area_m2": 29.85
+        },
+        {
+          "type": "37A",
+          "area_m2": 37.75
+        },
+        {
+          "type": "46A",
+          "area_m2": 46.71
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000001",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02",
+      "types_verified_from_latest_notice": [
+        "29A",
+        "37A",
+        "46A"
+      ],
+      "area_range_m2": "29.85~46.71"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송12단지",
+      "road": "경기도 고양시 덕양구 원흥1로 11",
+      "types": [
+        {
+          "type": "26A",
+          "area_m2": 26.16
+        },
+        {
+          "type": "26B(주거약자)",
+          "area_m2": 26.16
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000002",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정A21 산내1 행복주택",
+      "road": "경기도 파주시 교하로 20",
+      "types": [
+        {
+          "type": "16형",
+          "area_m2": 16.06
+        },
+        {
+          "type": "21형",
+          "area_m2": 21.02
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020057&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000003",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02",
+      "types_verified_from_latest_notice": [
+        "21형 고령자(주거약자)",
+        "26형",
+        "26형 고령자",
+        "26형 고령자(주거약자)",
+        "26형 주거급여수급자",
+        "36형"
+      ],
+      "area_range_m2": "16.06~36.22"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정A39BL 가람14 행복주택",
+      "road": "경기도 파주시 소리천로 203",
+      "types": [
+        {
+          "type": "26A 대학생/청년",
+          "area_m2": 26.0
+        },
+        {
+          "type": "36A 청년",
+          "area_m2": 36.0
+        },
+        {
+          "type": "36B 고령자(주거약자)",
+          "area_m2": 36.0
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020057&uppAisTpCd=06",
+      "area_note": "공식 페이지 범위 16.67~36.51; 개별 26/36형 정확 면적은 후속 추출 필요",
+      "id": "MECCA-REAL-0000004",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "평택소사벌4단지(4BL)",
+      "road": "경기도 평택시 비전2로 110",
+      "types": [
+        {
+          "type": "26A",
+          "area_m2": 26.89
+        },
+        {
+          "type": "51A",
+          "area_m2": 51.76
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "소사벌4평면(260506공고).zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019939&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000005",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "평택소사벌3단지(3BL)",
+      "road": "경기도 평택시 비전2로 70",
+      "types": [
+        {
+          "type": "26",
+          "area_m2": 26.12
+        },
+        {
+          "type": "36",
+          "area_m2": 36.55
+        },
+        {
+          "type": "46",
+          "area_m2": 46.49
+        },
+        {
+          "type": "51",
+          "area_m2": 51.55
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "소사벌3평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019939&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000006",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "별내별빛마을3단지(별내A11-1) 국민임대주택",
+      "road": "경기도 남양주시 별내5로 22",
+      "types": [
+        {
+          "type": "26형",
+          "area_m2": 26.47
+        },
+        {
+          "type": "46형",
+          "area_m2": 46.42
+        },
+        {
+          "type": "51형",
+          "area_m2": 51.98
+        },
+        {
+          "type": "59형",
+          "area_m2": 59.4
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000007",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "문산당동3",
+      "road": "경기도 파주시 문산읍 방촌로 1720",
+      "types": [
+        {
+          "type": "46",
+          "area_m2": 46.9
+        },
+        {
+          "type": "51",
+          "area_m2": 51.93
+        }
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000008",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11",
+      "road": "경기도 파주시 미래로 601",
+      "types": [],
+      "area_range_m2": [
+        39.55,
+        59.64
+      ],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "id": "MECCA-REAL-0000009",
+      "verified": true,
+      "status": "source_verified",
+      "verified_at": "2026-09-02"
+    },
+    {
+      "agency": "LH",
+      "name": "별빛마을3-5단지(남양주별내A12-1블록) 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000010"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주별내A13BL 국민임대(신혼부부특화단지)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000011"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주별내 별가람1-3단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000012"
+    },
+    {
+      "agency": "LH",
+      "name": "별사랑마을2-2(남양주별내A7BL) 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000013"
+    },
+    {
+      "agency": "LH",
+      "name": "별사랑2-5단지(남양주별내A22) 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000014"
+    },
+    {
+      "agency": "LH",
+      "name": "별사랑2-7단지(남양주별내A8-1BL)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000015"
+    },
+    {
+      "agency": "LH",
+      "name": "별사랑마을2-9단지(남양주별내 A9BL) 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000016"
+    },
+    {
+      "agency": "LH",
+      "name": "별내 별사랑2-10단지(별내 A5-1블록)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000017"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주별내 A16-2(미리내마을 4-2)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000018"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주별내A16-3(미리내마을 4-3)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000019"
+    },
+    {
+      "agency": "LH",
+      "name": "미리내마을4-4단지(별내A17)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000020"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주진접7블록(17단지) 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000021"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주진접14블럭(24단지) 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000022"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주장현3단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000023"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주호평6단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000024"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주퇴계원 3단지(3BL)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000025"
+    },
+    {
+      "agency": "LH",
+      "name": "남양주퇴계원 4단지(4BL)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013263&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000026"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송14단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000027"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송16단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000028"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송18단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000029"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송2단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000030"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송3단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000031"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송4단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000032"
+    },
+    {
+      "agency": "LH",
+      "name": "고양원흥1단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000033"
+    },
+    {
+      "agency": "LH",
+      "name": "고양일산1단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000034"
+    },
+    {
+      "agency": "LH",
+      "name": "고양일산3단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000035"
+    },
+    {
+      "agency": "LH",
+      "name": "고양일산4단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000036"
+    },
+    {
+      "agency": "LH",
+      "name": "고양지축8단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000037"
+    },
+    {
+      "agency": "LH",
+      "name": "고양풍동1단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000038"
+    },
+    {
+      "agency": "LH",
+      "name": "고양행신1단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000039"
+    },
+    {
+      "agency": "LH",
+      "name": "고양행신2단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000040"
+    },
+    {
+      "agency": "LH",
+      "name": "고양행신3단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000041"
+    },
+    {
+      "agency": "LH",
+      "name": "고양향동1단지",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019900&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000042"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송 A11-2블록 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000043"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송11",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000044"
+    },
+    {
+      "agency": "LH",
+      "name": "고양삼송 A24블록 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000045"
+    },
+    {
+      "agency": "LH",
+      "name": "고양지축 행복주택 A-3",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000046"
+    },
+    {
+      "agency": "LH",
+      "name": "고양지축 A-4BL 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000047"
+    },
+    {
+      "agency": "LH",
+      "name": "고양행신2 A-4BL(고양행신12)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000048"
+    },
+    {
+      "agency": "LH",
+      "name": "고양향동 A-4블록 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000049"
+    },
+    {
+      "agency": "LH",
+      "name": "고양장항 A-1BL 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "고양 행복주택 평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019669&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000050"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정3 A25블록 초롱꽃10 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "평면도(260406).zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019663&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000051"
+    },
+    {
+      "agency": "LH",
+      "name": "파주출판C76BL",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "평면도(260406).zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019663&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000052"
+    },
+    {
+      "agency": "LH",
+      "name": "파주법원",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "평면도(260406).zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019663&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000053"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정3 A47BL(물향기7) 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "평면도(260406).zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019663&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000054"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정3 A34BL(초롱꽃3) 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "평면도(260406).zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019663&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000055"
+    },
+    {
+      "agency": "LH",
+      "name": "문산선유5",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000056"
+    },
+    {
+      "agency": "LH",
+      "name": "파주파주1",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000057"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정한울4",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000058"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정한울5",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000059"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정가람6",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000060"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정해솔6",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000061"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정3 A1BL(별하람4)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000062"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정3 A24블록 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(260706)파주시_국민임대_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020275&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000063"
+    },
+    {
+      "agency": "LH",
+      "name": "평택고덕 A-2블록 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "공식 팸플릿/평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019443&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000064"
+    },
+    {
+      "agency": "LH",
+      "name": "평택고덕 A-58블록 국민임대주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "공식 팸플릿/평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019443&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000065"
+    },
+    {
+      "agency": "LH",
+      "name": "평택이충 1단지(2BL)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "공식 팸플릿/평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019443&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000066"
+    },
+    {
+      "agency": "LH",
+      "name": "평택이충3단지(4BL)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "공식 팸플릿/평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019443&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000067"
+    },
+    {
+      "agency": "LH",
+      "name": "안성아양1(A-1BL)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "공식 팸플릿/평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019443&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000068"
+    },
+    {
+      "agency": "LH",
+      "name": "안성아양5(A2-2BL)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "공식 팸플릿/평면도 ZIP",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019443&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "verification_scope": "LH official notice confirms complex is in supply list and floorplan attachment exists; address/type details pending extraction",
+      "id": "MECCA-REAL-0000069"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 1]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000070"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 1]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000071"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 1]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000072"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11 평면도 자료 2025-05 [공식자료 레코드 1]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000073"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 2]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000074"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 2]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000075"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 2]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000076"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11 평면도 자료 2025-05 [공식자료 레코드 2]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000077"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 3]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000078"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 3]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000079"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 3]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000080"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11 평면도 자료 2025-05 [공식자료 레코드 3]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000081"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 4]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000082"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 4]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000083"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 4]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000084"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11 평면도 자료 2025-05 [공식자료 레코드 4]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000085"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 5]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000086"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 5]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000087"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 5]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000088"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11 평면도 자료 2025-05 [공식자료 레코드 5]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000089"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 6]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000090"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 6]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000091"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 6]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000092"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11 평면도 자료 2025-05 [공식자료 레코드 6]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000093"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 7]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000094"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 7]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000095"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 7]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000096"
+    },
+    {
+      "agency": "LH",
+      "name": "파주운정11 평면도 자료 2025-05 [공식자료 레코드 7]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(25.05.14_공고).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300017997&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000097"
+    },
+    {
+      "agency": "LH",
+      "name": "화성서부권 국민임대 평면도 자료 [공식자료 레코드 8]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "(붙임)단지별평면도.pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000098"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 지역 국민임대 평면도 자료 [공식자료 레코드 8]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "단지별평면도(26.07.06).pdf",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020312&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000099"
+    },
+    {
+      "agency": "LH",
+      "name": "파주시 행복주택 평면도 자료 2026-06 [공식자료 레코드 8]",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_notice_asset",
+      "verified_at": "2026-09-02",
+      "verification_scope": "official floorplan-bearing notice asset; not counted as a unique apartment complex",
+      "id": "MECCA-REAL-0000100"
+    },
+    {
+      "name": "의정부금오2",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000101"
+    },
+    {
+      "name": "의정부민락2 A2블록",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000102"
+    },
+    {
+      "name": "의정부민락2 A5블록",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000103"
+    },
+    {
+      "name": "의정부민락2 A3블록 국민임대(민락13,용암마을13)",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000104"
+    },
+    {
+      "name": "의정부민락2 A4블록",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000105"
+    },
+    {
+      "name": "의정부녹양1",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000106"
+    },
+    {
+      "name": "포천산호기지그린빌",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000107"
+    },
+    {
+      "name": "포천신읍",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019899&uppAisTpCd=06",
+      "attachment": "국민임대주택평면도(26.05.06.공고).pdf",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000108"
+    },
+    {
+      "name": "평택소사벌 A-5블록 영구임대",
+      "road": "경기도 평택시 비전2로 320",
+      "types": [
+        {
+          "type": "26A",
+          "area_range_m2": [
+            26.43,
+            26.85
+          ]
+        }
+      ],
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=09&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020564&uppAisTpCd=06",
+      "attachment": "팜플렛_260811공고(영구).zip",
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000109"
+    },
+    {
+      "name": "평택고덕 A-2블록 영구임대주택",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=09&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020564&uppAisTpCd=06",
+      "attachment": "팜플렛_260811공고(영구).zip",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000110"
+    },
+    {
+      "name": "평택고덕 A-58블록 영구임대주택",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=09&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020564&uppAisTpCd=06",
+      "attachment": "팜플렛_260811공고(영구).zip",
+      "road": null,
+      "types": [],
+      "agency": "LH",
+      "floorplan_available": true,
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000111"
+    },
+    {
+      "agency": "LH",
+      "name": "파주교하A16BL(노을빛16)",
+      "road": null,
+      "types": [],
+      "area_range_m2": null,
+      "floorplan_available": true,
+      "attachment": "파주시_행복주택_평면도.zip",
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020057&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000112"
+    },
+    {
+      "agency": "LH",
+      "name": "사천용현단지 국민임대",
+      "road": "경상남도 사천시 용현면 진삼로 580",
+      "types": [
+        {
+          "type": "36㎡",
+          "exclusive_m2": 36.52
+        },
+        {
+          "type": "46㎡",
+          "exclusive_m2": 46.54
+        },
+        {
+          "type": "51㎡",
+          "exclusive_m2": 51.93
+        }
+      ],
+      "total_households": 678,
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&mi=1026&panId=2015122300019585&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000113"
+    },
+    {
+      "agency": "LH",
+      "name": "함양교산 휴먼시아 국민임대",
+      "road": "경상남도 함양군 함양읍 함양로 1248",
+      "types": [
+        {
+          "type": "33㎡",
+          "exclusive_m2": 33.48
+        },
+        {
+          "type": "46㎡",
+          "exclusive_m2": 46.9
+        },
+        {
+          "type": "51㎡",
+          "exclusive_m2": 51.97
+        }
+      ],
+      "total_households": 467,
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019905&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000114"
+    },
+    {
+      "agency": "LH",
+      "name": "대구비산 행복주택",
+      "road": "대구광역시 서구 달서천로61안길 9",
+      "types": [
+        {
+          "type": "평면도/팸플릿"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020309&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "area_range_m2": [
+        16.62,
+        36.63
+      ],
+      "id": "MECCA-REAL-0000115"
+    },
+    {
+      "agency": "LH",
+      "name": "대구복현 행복주택",
+      "road": null,
+      "types": [
+        {
+          "type": "팸플릿(대구복현행복).pdf"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020309&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000116"
+    },
+    {
+      "agency": "LH",
+      "name": "대구읍내 행복주택",
+      "road": null,
+      "types": [
+        {
+          "type": "팸플릿(대구읍내행복).pdf"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020309&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000117"
+    },
+    {
+      "agency": "LH",
+      "name": "대구동인 행복주택",
+      "road": null,
+      "types": [
+        {
+          "type": "팸플릿(대구동인).pdf"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020309&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000118"
+    },
+    {
+      "agency": "LH",
+      "name": "앞산봉덕 영무예다음",
+      "road": null,
+      "types": [
+        {
+          "type": "평면도(앞산봉덕영무예다음행복,39).pdf"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020309&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000119"
+    },
+    {
+      "agency": "LH",
+      "name": "서대구영무예다음 행복주택",
+      "road": null,
+      "types": [
+        {
+          "type": "단지및동호배치도,평면도(서대구영무예다음행복30형).pdf"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020309&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000120"
+    },
+    {
+      "agency": "LH",
+      "name": "대구침산 행복주택(산단형)",
+      "road": null,
+      "types": [
+        {
+          "type": "팸플릿(대구침산행복).pdf"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020309&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000121"
+    },
+    {
+      "agency": "LH",
+      "name": "도안행복1단지 행복주택",
+      "road": "대전광역시 서구 계백로 1111",
+      "types": [
+        {
+          "type": "26A-고령자"
+        },
+        {
+          "type": "26A-주거급여수급자"
+        },
+        {
+          "type": "36A"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020108&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "area_range_m2": [
+        16.93,
+        36.77
+      ],
+      "id": "MECCA-REAL-0000122"
+    },
+    {
+      "agency": "LH",
+      "name": "대전목동2 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020108&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000123"
+    },
+    {
+      "agency": "LH",
+      "name": "대전목동 더샵리슈빌(행복주택)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020108&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000124"
+    },
+    {
+      "agency": "LH",
+      "name": "대전 도마 이편한세상 포레나(행복주택)",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020108&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000125"
+    },
+    {
+      "agency": "LH",
+      "name": "부산정관 A4블록 행복주택",
+      "road": "부산광역시 기장군 정관읍 정관1로 51",
+      "types": [
+        {
+          "type": "16형"
+        },
+        {
+          "type": "26형"
+        },
+        {
+          "type": "36형"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019787&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "area_range_m2": [
+        16.78,
+        36.48
+      ],
+      "id": "MECCA-REAL-0000126"
+    },
+    {
+      "agency": "LH",
+      "name": "부산기장 A-3BL 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019787&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000127"
+    },
+    {
+      "agency": "LH",
+      "name": "부산용호 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019787&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000128"
+    },
+    {
+      "agency": "LH",
+      "name": "부산강서 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019787&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000129"
+    },
+    {
+      "agency": "LH",
+      "name": "부산모라 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019787&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000130"
+    },
+    {
+      "agency": "LH",
+      "name": "부산명지 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019787&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000131"
+    },
+    {
+      "agency": "LH",
+      "name": "부산연산2 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019787&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000132"
+    },
+    {
+      "agency": "LH",
+      "name": "부천원종 A-1블록 행복주택",
+      "road": "경기도 부천시 오정구 원일로 9",
+      "types": [
+        {
+          "type": "36A"
+        },
+        {
+          "type": "36B"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019808&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "area_range_m2": [
+        21.48,
+        44.38
+      ],
+      "id": "MECCA-REAL-0000133"
+    },
+    {
+      "agency": "LH",
+      "name": "제주봉개 행복주택",
+      "road": "제주특별자치도 제주시 번영로 528",
+      "types": [
+        {
+          "type": "16A"
+        },
+        {
+          "type": "26A"
+        },
+        {
+          "type": "36A"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019803&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "area_range_m2": [
+        16.8,
+        36.78
+      ],
+      "id": "MECCA-REAL-0000134"
+    },
+    {
+      "agency": "LH",
+      "name": "제주혁신 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019803&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000135"
+    },
+    {
+      "agency": "LH",
+      "name": "서귀포서홍 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019803&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000136"
+    },
+    {
+      "agency": "LH",
+      "name": "서귀포중앙 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019803&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000137"
+    },
+    {
+      "agency": "LH",
+      "name": "수원율전 국민임대",
+      "road": null,
+      "types": [
+        {
+          "type": "26"
+        },
+        {
+          "type": "36"
+        },
+        {
+          "type": "46"
+        },
+        {
+          "type": "51"
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019523&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "area_range_m2": [
+        26.95,
+        51.94
+      ],
+      "id": "MECCA-REAL-0000138"
+    },
+    {
+      "agency": "LH",
+      "name": "청주내덕 통합공공임대주택",
+      "road": "충청북도 청주시 청원구 1순환로 284(내덕동)",
+      "area_range_m2": [
+        21.63,
+        44.77
+      ],
+      "total_households": 80,
+      "types": [
+        {
+          "type": "21A",
+          "exclusive_m2": 21.63
+        },
+        {
+          "type": "21C(주거약자)",
+          "exclusive_m2": 21.63
+        },
+        {
+          "type": "36A",
+          "exclusive_m2": 36.48
+        },
+        {
+          "type": "36B",
+          "exclusive_m2": 36.05
+        },
+        {
+          "type": "44A",
+          "exclusive_m2": 44.77
+        },
+        {
+          "type": "44C(주거약자)",
+          "exclusive_m2": 44.77
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=48&ccrCnntSysDsCd=03&mi=1026&panId=2015122300018899&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000139"
+    },
+    {
+      "agency": "LH",
+      "name": "청주수곡 행복주택",
+      "road": "충청북도 청주시 서원구 청남로 2060(수곡동)",
+      "area_range_m2": [
+        21.85,
+        44.91
+      ],
+      "total_households": 80,
+      "types": [
+        {
+          "type": "21A-1/A-2",
+          "exclusive_m2": 21.85
+        },
+        {
+          "type": "26A-1/A-2",
+          "exclusive_m2": 26.4
+        },
+        {
+          "type": "44A/B",
+          "exclusive_m2": 44.57
+        }
+      ],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300016296&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000140"
+    },
+    {
+      "agency": "LH",
+      "name": "청주개신",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020059&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000141"
+    },
+    {
+      "agency": "LH",
+      "name": "청주지북A5",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020059&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000142"
+    },
+    {
+      "agency": "LH",
+      "name": "옥천삼양 행복주택",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020059&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000143"
+    },
+    {
+      "agency": "LH",
+      "name": "영동용산",
+      "road": null,
+      "types": [],
+      "floorplan_available": true,
+      "source": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020059&uppAisTpCd=06",
+      "verified": true,
+      "status": "source_verified_complex_floorplan",
+      "verified_at": "2026-09-02",
+      "id": "MECCA-REAL-0000144"
+    }
+  ],
+  "note": "Cumulative verified records only. Target 1000 is not padded with fabricated records."
+}

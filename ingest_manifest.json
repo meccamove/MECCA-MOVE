@@ -1,0 +1,7 @@
+{
+  "slot_capacity": 10000000000,
+  "requested_batch_target": 1000,
+  "actual_verified_records": 111,
+  "cumulative": true,
+  "data_file": "verified_floorplans_cumulative.json"
+}

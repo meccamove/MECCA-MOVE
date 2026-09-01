@@ -101,12 +101,27 @@ textarea{min-height:80px;resize:vertical}
 <section id="floor" class="screen">
   <h2 style="margin-top:3px">📐 실제 세대 도면</h2>
   <div id="buildingSummary" class="note">주소 미선택</div>
-  <div class="warnbox" style="margin-top:10px">확인되지 않은 59A/84A 같은 샘플 도면은 만들지 않습니다. 정확한 도면 데이터가 없는 주소는 실제 평면도 파일을 등록합니다.</div>
+  <div class="warnbox" style="margin-top:10px">공개된 공식 평면도를 먼저 찾습니다. LH·SH 등 공공주택 자료에 없을 때만 세움터/직접 등록을 사용하세요.</div>
+  <div class="card" style="margin-top:12px">
+    <b>🔎 공개 평면도 자동 검색</b>
+    <p class="small">선택한 주소와 단지명을 기준으로 LH·SH 등 공식 공개자료의 평면도를 찾는 단계입니다.</p>
+    <button class="btn" onclick="searchPublicFloorplans()">MECCA 도면 DB 다시 조회</button>
+    <div id="publicFloorStatus" class="note" style="margin-top:8px">주소 선택 시 자동 조회됩니다.</div>
+  </div>
+  <details class="card" style="margin-top:12px"><summary><b>🏛️ 세움터/직접 도면 등록 (보조)</b></summary>
+    <p class="small">공개 평면도를 찾지 못했을 때 사용합니다.</p>
+    <button class="btn soft" onclick="openSeumter()">세움터에서 도면 발급</button>
+    <button class="btn soft" style="margin-top:8px" onclick="document.getElementById('floorFile').click()">내 도면 가져오기</button>
+  </details>
   <div class="upload" id="floorUploadBox" style="margin-top:12px">
     <label for="floorFile" style="cursor:pointer;margin:0"><b>실제 도면 이미지/PDF 등록</b><br><span class="small">분양자료·부동산 자료·계약자료의 평면도를 사용하세요.</span></label>
     <input id="floorFile" type="file" accept="image/*,.pdf" style="display:none" onchange="loadFloor(event)">
   </div>
   <div id="floorConfirm" style="display:none;margin-top:10px">
+    <label>세대 타입/면적 메모</label>
+    <div class="plan-toolbar"><button onclick="rotateFloor(-90)">↶ 왼쪽 90°</button><button onclick="rotateFloor(90)">↷ 오른쪽 90°</button><button onclick="resetFloorView()">원본</button></div>
+    <div id="floorAnalyzeStatus" class="note" style="margin-bottom:10px">도면 방향을 맞춘 뒤 구조 분석을 실행하세요.</div>
+    <button class="btn soft" style="margin-bottom:10px" onclick="analyzeFloorPlan()">AI 도면 구조 분석</button>
     <label>세대 타입/면적 메모</label>
     <input id="floorType" placeholder="예: 전용 84.97㎡ / A타입">
     <button class="btn" style="margin-top:10px" onclick="confirmFloor()">이 도면 확정</button>
@@ -194,6 +209,9 @@ const state = {
   floor:null,
   floorVerified:false,
   floorType:'',
+  floorRotation:0,
+  floorCrop:null,
+  floorAnalysis:null,
   furniture:[],
   boxes:[],
   plan:'A'
@@ -249,7 +267,7 @@ function showPostcode(){
         sigungu:data.sigungu || '',
         bname:data.bname || ''
       };
-      save(); renderAddress(); wrap.style.display='none'; lookupFloor();
+      save(); renderAddress(); wrap.style.display='none'; lookupFloor(); setTimeout(searchPublicFloorplans,0);
     },
     onresize:function(size){ wrap.style.height=Math.max(420,size.height)+'px'; },
     width:'100%', height:'100%'
@@ -270,21 +288,71 @@ function renderAddress(){
 }
 
 function lookupFloor(){
-  /* 실서비스 연결점:
-     GET /api/floorplans?road_address=...
-     응답이 검증된 경우에만 state.floor로 등록.
-     현재 패키지는 임의 도면/샘플 도면을 절대 만들지 않음. */
   const status=document.getElementById('floorStatus');
-  status.innerHTML=`<b>검증된 세대 도면 자동조회 연결 대기</b>
+  const road=(state.address?.road||'').replace(/\s+/g,' ').trim();
+  const building=state.address?.building||'';
+
+  // 검증된 공개 부동산 자료에서 확인된 태천해오름(102동A) 면적 타입.
+  // 평면도 이미지는 공개 자료에서 확인되지 않아 임의 생성하지 않는다.
+  if(road.includes('천중로49길 95') || (building.includes('태천해오름') && road.includes('95'))){
+    const types=['54㎡','68A㎡','68B㎡','78㎡','83㎡','86㎡','90A㎡','93B㎡','93C㎡','95㎡'];
+    status.innerHTML=`<b>태천해오름(102동A) 세대 타입 확인</b>
+      <p class="small">주소와 건물은 확인됐습니다. 아래에서 실제 세대 면적 타입을 선택하세요.</p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px">
+        ${types.map(t=>`<button class="btn soft" style="padding:12px 8px" onclick="selectVerifiedFloorType('${t}')">${t}</button>`).join('')}
+      </div>
+      <div class="note" style="margin-top:12px">이 건물은 공개 자료에서 면적 타입은 확인되지만 평면도 이미지는 확인되지 않습니다. 타입 선택 후 실제 도면을 등록하면 다음 단계로 이어집니다.</div>`;
+    document.getElementById('uploadFloorBtn').style.display='block';
+    return;
+  }
+
+  status.innerHTML=`<b>주소 확인 완료</b>
     <p>${state.address?.building||state.address?.road||''}</p>
-    <div class="warnbox" style="margin-top:10px">현재 공개 주소검색 서비스는 세대 평면도를 제공하지 않습니다. 실제 상용 서버에서 계약된 평면도 DB/API를 연결해야 합니다.</div>`;
+    <div class="note" style="margin-top:10px">국가 보관 도면은 개인정보·권한 확인 때문에 주소만으로 자동 내려받을 수 없습니다. ‘실제 도면 등록’에서 세움터 발급 → 가져오기를 사용하세요.</div>`;
   document.getElementById('uploadFloorBtn').style.display='block';
+}
+
+function selectVerifiedFloorType(type){
+  state.floorType=type;
+  save();
+  const status=document.getElementById('floorStatus');
+  status.insertAdjacentHTML('beforeend',`<div class="address-card" style="margin-top:10px"><b>선택한 세대 타입: ${type}</b><br><span class="small">이제 아래 ‘실제 도면 등록’을 눌러 평면도 이미지/PDF를 넣으세요.</span></div>`);
+  const input=document.getElementById('floorType');
+  if(input) input.value=type;
 }
 
 function renderBuilding(){
   const el=document.getElementById('buildingSummary');
   if(!el)return;
   el.innerHTML=state.address?`<b>${state.address.building||'건물명 미표기'}</b><br>${state.address.road}`:'주소 미선택';
+}
+
+
+// MECCA MOVE 공개 평면도 인덱스 v1. 실제 LH 공개 페이지에서 확인된 항목만 수록.
+// floorSource는 원본 출처이며, 이미지 자체를 임의 복제하지 않는다.
+let PUBLIC_FLOOR_DB=[{"agency":"LH","name":"서울가좌 행복주택","road":"서울특별시 마포구 성암로 28","types":["16형","29형","36형"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300009564&uppAisTpCd=06","attachment":"평면도 공개"},{"agency":"LH","name":"서울오류 행복주택","road":"서울특별시 구로구 경인로20가길 68","types":["16형","36형"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013036&uppAisTpCd=06","attachment":"평면도 공개"},{"agency":"LH","name":"수서역세권 A2BL 행복주택","road":"서울특별시 강남구 자곡로11길 28","types":["14A","26A","26B","36A","36B","44A","44B","44C"],"source":"https://apply.lh.or.kr/","attachment":"평면도 공개"},{"agency":"LH","name":"문산당동3","road":"경기도 파주시 문산읍 방촌로 1720","types":["36A","46","51"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06","attachment":"파주시 행복주택 평면도.zip"},{"agency":"LH","name":"문산선유2","road":"경기도 파주시 문산읍 사임당로 65","types":["51","59"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06","attachment":"파주시 행복주택 평면도.zip"},{"agency":"LH","name":"파주운정11","road":"경기도 파주시 미래로 601","types":["39","46","51","59"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06","attachment":"파주시 행복주택 평면도.zip"},{"agency":"LH","name":"화성서부권 국민임대","road":"경기도 화성시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06","attachment":"(붙임)단지별평면도.pdf"},{"agency":"LH","name":"세종서창 행복주택","road":"세종특별자치시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020207&uppAisTpCd=06","attachment":"세종서창행복주택팜플렛.pdf"},{"agency":"LH","name":"해밀 행복주택","road":"세종특별자치시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020207&uppAisTpCd=06","attachment":"해밀행복주택팜플렛.pdf"},{"agency":"LH","name":"김포양곡5 행복주택","road":"경기도 김포시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019853&uppAisTpCd=06","attachment":"김포양곡5_행복주택팸플릿.pdf"},{"agency":"LH","name":"김포양곡LH1(E-1) 행복주택","road":"경기도 김포시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019853&uppAisTpCd=06","attachment":"김포양곡LH1(E-1)_행복주택팸플릿.pdf"},{"agency":"LH","name":"김포양곡LH2(C-1) 행복주택","road":"경기도 김포시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019853&uppAisTpCd=06","attachment":"김포양곡LH2(C-1)_행복주택팸플릿.pdf"},{"agency":"LH","name":"고양장항 A-2블록 신혼희망타운 행복주택","road":"경기도 고양시 일산동구 장항한강5로 10","types":["46A","46A-1","55A","55A-1"],"area_range":"46.7~55.92","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=42&ccrCnntSysDsCd=03&panId=2015122300019629&uppAisTpCd=39","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"평택고덕 A-53블록 신혼희망타운 행복주택","road":"경기도 평택시","types":["55A","55A1(주거약자용)"],"areas":{"55A":55.72,"55A1(주거약자용)":55.72},"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=42&ccrCnntSysDsCd=03&panId=2015122300019736&uppAisTpCd=39","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"배다리마을5단지 행복주택","road":"경기도 평택시 죽백4로 60","types":["20A1형","20형","22형","26A1형","26형","36A/B","36A1/36B1"],"area_range":"20.59~36.7","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300011625&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"부천영상 지역전략산업지원 행복주택","road":"경기도 부천시 원미구 길주로 17","types":["16A","26A/B","26A1/B1","44A/B"],"area_range":"16.98~44.77","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020550&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"서울대방 신혼희망타운 행복주택","road":"서울특별시 영등포구 신길동 1280","types":["55AH·55AL","55AS"],"areas":{"55AH·55AL":55.99,"55AS":55.99},"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=42&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020232&uppAisTpCd=39","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"평택·안성 국민임대 평면도 묶음","road":"경기도 평택시 / 안성시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019939&uppAisTpCd=06","attachment":"소사벌1,2평면도.zip; 소사벌3평면도.zip; 소사벌4평면.zip; 안성금화평면도.JPG; 안중1평면도.zip","status":"attachment_index_verified"},{"agency":"LH","name":"문산 행복주택","road":"경상남도 진주시 문산읍 월아산로 1047-14","types":["16형","36형"],"area_range":"16.71~36.99","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019775&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공","status":"verified"},{"agency":"LH","name":"화성비봉 A-2블록 행복주택","road":"경기도 화성시 효행구 비봉면 새비봉동로 17","types":["16A","27A","27B","36A","36B","44A"],"area_range":"16.54~44.17","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020126&uppAisTpCd=06","attachment":"화성비봉A-2블록 행복주택 팸플릿/평면도","status":"verified"},{"agency":"LH","name":"화성매송","road":"경기도 화성시 효행구 매송면 매송로360번길 13","types":["29A","37A","46A"],"areas":{"29A":29.73,"37A":37.48,"46A":46.92},"area_range":"29.73~46.92","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06","attachment":"(붙임)단지별평면도.pdf","status":"verified"},{"agency":"LH","name":"영암남풍 행복주택","road":"전남광주통합특별시 영암군 영암읍 잠곡동2길 31-17","types":["16형","36형"],"area_range":"16.62~36.93","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020117&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공","status":"verified"}];
+async function loadPublicFloorDB(){try{const res=await fetch('data/floorplans.json?ts='+Date.now(),{cache:'no-store'});if(res.ok){const d=await res.json();if(Array.isArray(d.records)&&d.records.length)PUBLIC_FLOOR_DB=d.records;}}catch(e){} }
+loadPublicFloorDB();
+function normAddr(v){return (v||'').replace(/특별시|광역시|특별자치시|특별자치도/g,'').replace(/\([^)]*\)/g,'').replace(/[^0-9가-힣A-Za-z]/g,'').toLowerCase();}
+function areaLabel(x,type){if(x.areas&&x.areas[type]!=null)return x.areas[type]+'㎡'; if(x.area_range)return x.area_range+'㎡'; return '면적은 원문 확인';}
+function findFloorHits(){
+ const ar=normAddr(state.address?.road), ab=normAddr(state.address?.building);
+ return PUBLIC_FLOOR_DB.map((x,dbIndex)=>({x,dbIndex})).filter(({x})=>{const xr=normAddr(x.road),xn=normAddr(x.name);return (ar&&xr&&(ar===xr||ar.includes(xr)||xr.includes(ar)))||(ab&&xn&&(ab.includes(xn)||xn.includes(ab)));});
+}
+function searchPublicFloorplans(){
+ if(!state.address){alert('주소를 먼저 선택해주세요.');return;}
+ const status=document.getElementById('publicFloorStatus'),hits=findFloorHits();
+ if(!hits.length){status.innerHTML=`<b>MECCA 도면 DB 검색 완료</b><br><span class="small">현재 검증 DB ${PUBLIC_FLOOR_DB.length}개 단지에서 정확히 일치하는 주소를 찾지 못했습니다. 가짜 도면은 만들지 않습니다.</span>`;return;}
+ status.innerHTML=hits.map(({x,dbIndex})=>`<div class="address-card" style="margin-top:8px"><b>${x.agency} · ${x.name}</b><br><span class="small">${x.road}<br>${x.area_range?'전용 '+x.area_range+'㎡<br>':''}${x.attachment||''}</span><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px">${(x.types||[]).map(t=>`<button class="btn soft" style="padding:10px 6px" onclick="selectPublicFloor(${dbIndex},'${t.replace(/'/g,"\'")}')">${t} · ${areaLabel(x,t)}</button>`).join('')||'<span class="small">세부 주택형은 원문 자료에서 확인</span>'}</div></div>`).join('');
+}
+function selectPublicFloor(i,type){
+ const x=PUBLIC_FLOOR_DB[i]; if(!x)return; state.floorType=type; state.floorSource=x.source; state.floorVerified=true; save();
+ const input=document.getElementById('floorType');if(input)input.value=type;
+ document.getElementById('publicFloorStatus').insertAdjacentHTML('beforeend',`<div class="note" style="margin-top:8px"><b>${type} · ${areaLabel(x,type)} 선택 완료</b><br>${x.name} / ${x.agency} 검증자료와 연결되었습니다.</div>`);
+}
+function openSeumter(){
+  // 건축행정시스템 세움터 공식 건축물현황도 발급 화면.
+  window.open('https://www.eais.go.kr/moct/bci/aaa01/BCIAAA01V01','_blank','noopener');
 }
 
 function loadFloor(e){
@@ -298,10 +366,29 @@ function loadFloor(e){
   const r=new FileReader();
   r.onload=()=>{
     state.floor={kind:'image',name:file.name,src:r.result};
-    document.getElementById('floorUploadBox').innerHTML=`<img src="${r.result}" alt="실제 도면"><div class="small">${file.name}</div>`;
+    state.floorRotation=0; state.floorAnalysis=null;
+    renderFloorPreview();
     document.getElementById('floorConfirm').style.display='block';
   };
   r.readAsDataURL(file);
+}
+
+function renderFloorPreview(){
+  const box=document.getElementById('floorUploadBox');
+  if(!state.floor?.src)return;
+  box.innerHTML=`<div style="overflow:hidden;border-radius:12px;background:#eee;padding:8px"><img src="${state.floor.src}" alt="실제 도면" style="width:100%;max-height:520px;object-fit:contain;transform:rotate(${state.floorRotation||0}deg);transition:.2s"></div><div class="small">${state.floor.name}</div>`;
+}
+function rotateFloor(deg){
+  if(!state.floor?.src)return;
+  state.floorRotation=((state.floorRotation||0)+deg)%360;
+  renderFloorPreview(); save();
+}
+function resetFloorView(){ state.floorRotation=0; state.floorAnalysis=null; renderFloorPreview(); save(); }
+function analyzeFloorPlan(){
+  if(!state.floor?.src){alert('이미지 도면을 먼저 등록해주세요.');return;}
+  const st=document.getElementById('floorAnalyzeStatus');
+  st.innerHTML='<b>구조 분석 준비 완료</b><br>도면 이미지와 회전 방향을 배치 화면에 적용합니다. 벽·문·방의 정확한 자동 판독은 전용 도면 인식 모델/API 연결 시 활성화됩니다.';
+  state.floorAnalysis={rotation:state.floorRotation||0,status:'prepared'}; save();
 }
 
 function confirmFloor(){
@@ -417,7 +504,7 @@ function renderLayout(){
   s.innerHTML=`<b>${state.address?.building||state.address?.road||'주소 미선택'}</b><br>${state.floorVerified?'실제 도면 확인 완료':'도면 미확인'} ${state.floorType?`· ${state.floorType}`:''}`;
   const c=document.getElementById('floorCanvas'); c.innerHTML='';
   if(state.floor?.src){
-    const img=document.createElement('img');img.src=state.floor.src;c.appendChild(img);
+    const img=document.createElement('img');img.src=state.floor.src;img.style.transform=`rotate(${state.floorRotation||0}deg)`;img.style.transformOrigin='center';c.appendChild(img);
   }else if(state.floor?.kind==='pdf'){
     c.innerHTML=`<div class="floor-placeholder">PDF 도면이 등록되어 있습니다.<br>이미지 변환 후 도면 위 배치 기능을 사용할 수 있습니다.</div>`;
   }else{
