@@ -285,6 +285,8 @@ function renderAddress(){
     <span class="chip">실제 주소 선택 완료</span>
   </div>`;
   renderBuilding();
+  lookupFloor();
+  setTimeout(searchPublicFloorplans,0);
 }
 
 function lookupFloor(){
@@ -306,9 +308,9 @@ function lookupFloor(){
     return;
   }
 
-  status.innerHTML=`<b>주소 확인 완료</b>
+  status.innerHTML=`<b>주소 선택 완료</b>
     <p>${state.address?.building||state.address?.road||''}</p>
-    <div class="note" style="margin-top:10px">국가 보관 도면은 개인정보·권한 확인 때문에 주소만으로 자동 내려받을 수 없습니다. ‘실제 도면 등록’에서 세움터 발급 → 가져오기를 사용하세요.</div>`;
+    <div class="note" style="margin-top:10px">MECCA 검증 도면 DB에서 이 주소를 조회합니다. 등록된 도면이 없으면 임의 도면을 만들지 않고 ‘등록된 검증 도면 없음’으로 표시합니다.</div>`;
   document.getElementById('uploadFloorBtn').style.display='block';
 }
 
@@ -331,16 +333,49 @@ function renderBuilding(){
 // MECCA MOVE 공개 평면도 인덱스 v1. 실제 LH 공개 페이지에서 확인된 항목만 수록.
 // floorSource는 원본 출처이며, 이미지 자체를 임의 복제하지 않는다.
 let PUBLIC_FLOOR_DB=[{"agency":"LH","name":"서울가좌 행복주택","road":"서울특별시 마포구 성암로 28","types":["16형","29형","36형"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300009564&uppAisTpCd=06","attachment":"평면도 공개"},{"agency":"LH","name":"서울오류 행복주택","road":"서울특별시 구로구 경인로20가길 68","types":["16형","36형"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300013036&uppAisTpCd=06","attachment":"평면도 공개"},{"agency":"LH","name":"수서역세권 A2BL 행복주택","road":"서울특별시 강남구 자곡로11길 28","types":["14A","26A","26B","36A","36B","44A","44B","44C"],"source":"https://apply.lh.or.kr/","attachment":"평면도 공개"},{"agency":"LH","name":"문산당동3","road":"경기도 파주시 문산읍 방촌로 1720","types":["36A","46","51"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06","attachment":"파주시 행복주택 평면도.zip"},{"agency":"LH","name":"문산선유2","road":"경기도 파주시 문산읍 사임당로 65","types":["51","59"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06","attachment":"파주시 행복주택 평면도.zip"},{"agency":"LH","name":"파주운정11","road":"경기도 파주시 미래로 601","types":["39","46","51","59"],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020057&uppAisTpCd=06","attachment":"파주시 행복주택 평면도.zip"},{"agency":"LH","name":"화성서부권 국민임대","road":"경기도 화성시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06","attachment":"(붙임)단지별평면도.pdf"},{"agency":"LH","name":"세종서창 행복주택","road":"세종특별자치시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020207&uppAisTpCd=06","attachment":"세종서창행복주택팜플렛.pdf"},{"agency":"LH","name":"해밀 행복주택","road":"세종특별자치시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020207&uppAisTpCd=06","attachment":"해밀행복주택팜플렛.pdf"},{"agency":"LH","name":"김포양곡5 행복주택","road":"경기도 김포시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019853&uppAisTpCd=06","attachment":"김포양곡5_행복주택팸플릿.pdf"},{"agency":"LH","name":"김포양곡LH1(E-1) 행복주택","road":"경기도 김포시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019853&uppAisTpCd=06","attachment":"김포양곡LH1(E-1)_행복주택팸플릿.pdf"},{"agency":"LH","name":"김포양곡LH2(C-1) 행복주택","road":"경기도 김포시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019853&uppAisTpCd=06","attachment":"김포양곡LH2(C-1)_행복주택팸플릿.pdf"},{"agency":"LH","name":"고양장항 A-2블록 신혼희망타운 행복주택","road":"경기도 고양시 일산동구 장항한강5로 10","types":["46A","46A-1","55A","55A-1"],"area_range":"46.7~55.92","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=42&ccrCnntSysDsCd=03&panId=2015122300019629&uppAisTpCd=39","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"평택고덕 A-53블록 신혼희망타운 행복주택","road":"경기도 평택시","types":["55A","55A1(주거약자용)"],"areas":{"55A":55.72,"55A1(주거약자용)":55.72},"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=42&ccrCnntSysDsCd=03&panId=2015122300019736&uppAisTpCd=39","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"배다리마을5단지 행복주택","road":"경기도 평택시 죽백4로 60","types":["20A1형","20형","22형","26A1형","26형","36A/B","36A1/36B1"],"area_range":"20.59~36.7","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300011625&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"부천영상 지역전략산업지원 행복주택","road":"경기도 부천시 원미구 길주로 17","types":["16A","26A/B","26A1/B1","44A/B"],"area_range":"16.98~44.77","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020550&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"서울대방 신혼희망타운 행복주택","road":"서울특별시 영등포구 신길동 1280","types":["55AH·55AL","55AS"],"areas":{"55AH·55AL":55.99,"55AS":55.99},"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=42&ccrCnntSysDsCd=03&mi=1026&panId=2015122300020232&uppAisTpCd=39","attachment":"평면도 이미지 다운로드 제공"},{"agency":"LH","name":"평택·안성 국민임대 평면도 묶음","road":"경기도 평택시 / 안성시","types":[],"source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300019939&uppAisTpCd=06","attachment":"소사벌1,2평면도.zip; 소사벌3평면도.zip; 소사벌4평면.zip; 안성금화평면도.JPG; 안중1평면도.zip","status":"attachment_index_verified"},{"agency":"LH","name":"문산 행복주택","road":"경상남도 진주시 문산읍 월아산로 1047-14","types":["16형","36형"],"area_range":"16.71~36.99","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300019775&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공","status":"verified"},{"agency":"LH","name":"화성비봉 A-2블록 행복주택","road":"경기도 화성시 효행구 비봉면 새비봉동로 17","types":["16A","27A","27B","36A","36B","44A"],"area_range":"16.54~44.17","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020126&uppAisTpCd=06","attachment":"화성비봉A-2블록 행복주택 팸플릿/평면도","status":"verified"},{"agency":"LH","name":"화성매송","road":"경기도 화성시 효행구 매송면 매송로360번길 13","types":["29A","37A","46A"],"areas":{"29A":29.73,"37A":37.48,"46A":46.92},"area_range":"29.73~46.92","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=07&ccrCnntSysDsCd=03&panId=2015122300020243&uppAisTpCd=06","attachment":"(붙임)단지별평면도.pdf","status":"verified"},{"agency":"LH","name":"영암남풍 행복주택","road":"전남광주통합특별시 영암군 영암읍 잠곡동2길 31-17","types":["16형","36형"],"area_range":"16.62~36.93","source":"https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?aisTpCd=10&ccrCnntSysDsCd=03&panId=2015122300020117&uppAisTpCd=06","attachment":"평면도 이미지 다운로드 제공","status":"verified"}];
-async function loadPublicFloorDB(){try{const res=await fetch('data/floorplans.json?ts='+Date.now(),{cache:'no-store'});if(res.ok){const d=await res.json();if(Array.isArray(d.records)&&d.records.length)PUBLIC_FLOOR_DB=d.records;}}catch(e){} }
-loadPublicFloorDB();
+async function loadPublicFloorDB(){
+  const candidates=[
+    'data/verified_floorplans_cumulative.json',
+    'verified_floorplans_cumulative.json',
+    'data/floorplans.json',
+    'floorplans.json'
+  ];
+  for(const url of candidates){
+    try{
+      const res=await fetch(url+'?ts='+Date.now(),{cache:'no-store'});
+      if(!res.ok) continue;
+      const d=await res.json();
+      const rows=Array.isArray(d)?d:(Array.isArray(d.records)?d.records:[]);
+      if(rows.length){
+        PUBLIC_FLOOR_DB=rows.map(x=>({
+          ...x,
+          road:x.road||x.address||'',
+          types:(x.types||[]).map(t=>typeof t==='string'?t:(t.type||t.name||'')).filter(Boolean),
+          area_range:x.area_range||(
+            Array.isArray(x.area_range_m2)&&x.area_range_m2.length===2
+              ? x.area_range_m2[0]+'~'+x.area_range_m2[1] : ''
+          )
+        }));
+        return true;
+      }
+    }catch(e){}
+  }
+  return false;
+}
+loadPublicFloorDB().then(()=>{ if(state.address){ lookupFloor(); searchPublicFloorplans(); } });
 function normAddr(v){return (v||'').replace(/특별시|광역시|특별자치시|특별자치도/g,'').replace(/\([^)]*\)/g,'').replace(/[^0-9가-힣A-Za-z]/g,'').toLowerCase();}
 function areaLabel(x,type){if(x.areas&&x.areas[type]!=null)return x.areas[type]+'㎡'; if(x.area_range)return x.area_range+'㎡'; return '면적은 원문 확인';}
 function findFloorHits(){
  const ar=normAddr(state.address?.road), ab=normAddr(state.address?.building);
  return PUBLIC_FLOOR_DB.map((x,dbIndex)=>({x,dbIndex})).filter(({x})=>{const xr=normAddr(x.road),xn=normAddr(x.name);return (ar&&xr&&(ar===xr||ar.includes(xr)||xr.includes(ar)))||(ab&&xn&&(ab.includes(xn)||xn.includes(ab)));});
 }
-function searchPublicFloorplans(){
- if(!state.address){alert('주소를 먼저 선택해주세요.');return;}
+async function searchPublicFloorplans(){
+ if(!state.address){
+   const status=document.getElementById('publicFloorStatus');
+   if(status) status.innerHTML='<b>주소를 먼저 선택하세요.</b>';
+   return;
+ }
+ await loadPublicFloorDB();
  const status=document.getElementById('publicFloorStatus'),hits=findFloorHits();
  if(!hits.length){status.innerHTML=`<b>MECCA 도면 DB 검색 완료</b><br><span class="small">현재 검증 DB ${PUBLIC_FLOOR_DB.length}개 단지에서 정확히 일치하는 주소를 찾지 못했습니다. 가짜 도면은 만들지 않습니다.</span>`;return;}
  status.innerHTML=hits.map(({x,dbIndex})=>`<div class="address-card" style="margin-top:8px"><b>${x.agency} · ${x.name}</b><br><span class="small">${x.road}<br>${x.area_range?'전용 '+x.area_range+'㎡<br>':''}${x.attachment||''}</span><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px">${(x.types||[]).map(t=>`<button class="btn soft" style="padding:10px 6px" onclick="selectPublicFloor(${dbIndex},'${t.replace(/'/g,"\'")}')">${t} · ${areaLabel(x,t)}</button>`).join('')||'<span class="small">세부 주택형은 원문 자료에서 확인</span>'}</div></div>`).join('');
