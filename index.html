@@ -65,7 +65,7 @@ textarea{min-height:80px;resize:vertical}
 <div class="app">
 <header>
   <div class="brand"><img src="logo.jpg"><div><b>MECCA MOVE</b><small>삶의 중심을 옮기다</small></div></div>
-  <span class="badge">V14 · 주소창 X 수정</span>
+  <span class="badge">V15 · JS 오류 수정</span>
 </header>
 
 <main>
@@ -778,9 +778,7 @@ function exportProject(){
 }
 function renderAll(){ renderAddress(); renderBuilding(); renderFurnitureCards(); renderMoving(); }
 loadSaved();
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => .catch(() => {}));
-}
+
 </script>
 
 <script>
