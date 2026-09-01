@@ -87,13 +87,15 @@ textarea{min-height:80px;resize:vertical}
   <h2 style="margin-top:3px">📍 새집 주소</h2>
   <div class="note">실제 우편번호/도로명주소 검색을 사용합니다.</div>
   <button class="btn" style="margin-top:12px" onclick="showPostcode()">실제 주소 검색</button>
+  <button id="postcodeCloseBtn" class="btn soft" style="margin-top:8px;display:none" onclick="closePostcode()">주소 검색창 닫기</button>
   <div id="postcodeWrap"><div id="postcodeBox"></div></div>
+  <div id="addressHistory"></div>
   <div id="addressInfo"></div>
 
   <h2>세대 도면</h2>
   <div id="floorStatus" class="card">
-    <b>주소를 먼저 선택하세요.</b>
-    <p>선택한 건물의 검증 도면 조회 단계로 연결됩니다.</p>
+    <b>주소를 선택하세요.</b>
+    <p>주소 선택이 끝나면 자동으로 검증 도면 조회 화면으로 이동합니다.</p>
   </div>
   <button id="uploadFloorBtn" class="btn soft" style="margin-top:10px;display:none" onclick="go('floor')">실제 도면 등록</button>
 </section>
@@ -231,17 +233,47 @@ let cocoModel=null, scanImg=null, rawDetections=[];
 let postcodeEmbedded=false;
 
 function save(){ localStorage.setItem('mecca_move_full', JSON.stringify(state)); }
+const ADDRESS_HISTORY_KEY='mecca_address_history_v1';
+function getAddressHistory(){
+  try{return JSON.parse(localStorage.getItem(ADDRESS_HISTORY_KEY)||'[]')}catch(e){return []}
+}
+function saveAddressHistory(a){
+  if(!a||!a.road)return;
+  let h=getAddressHistory().filter(x=>x.road!==a.road);
+  h.unshift(a); h=h.slice(0,10);
+  localStorage.setItem(ADDRESS_HISTORY_KEY,JSON.stringify(h));
+}
 function loadSaved(){
   try{
     const x=JSON.parse(localStorage.getItem('mecca_move_full')||'null');
-    if(x){ Object.assign(state,x); renderAll(); }
+    if(x){
+      Object.assign(state,x);
+      // 새로고침 시 현재 선택 주소는 해제. 검색기록만 별도 보존.
+      state.address=null;
+      state.floorType='';
+      state.floorSource='';
+      state.floorVerified=false;
+      save();
+    }
   }catch(e){}
+  renderAll();
+  renderAddressHistory();
 }
 function go(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
   document.getElementById(id).classList.add('on');
   document.querySelectorAll('.bottom button').forEach(b=>b.classList.toggle('on',b.dataset.id===id));
-  if(id==='floor') renderBuilding();
+  if(id==='address') renderAddressHistory();
+  if(id==='floor'){
+    renderBuilding();
+    if(state.address){
+      lookupFloor();
+      setTimeout(searchPublicFloorplans,0);
+    }else{
+      const ps=document.getElementById('publicFloorStatus');
+      if(ps) ps.innerHTML='<b>주소를 먼저 선택하세요.</b>';
+    }
+  }
   if(id==='furniture') renderFurnitureCards();
   if(id==='layout') renderLayout();
   if(id==='moving') renderMoving();
@@ -251,6 +283,8 @@ function go(id){
 function showPostcode(){
   const wrap=document.getElementById('postcodeWrap');
   wrap.style.display='block';
+  const closeBtn=document.getElementById('postcodeCloseBtn');
+  if(closeBtn) closeBtn.style.display='block';
   if(postcodeEmbedded) return;
   if(typeof daum==='undefined' || !daum.Postcode){
     wrap.innerHTML='<div class="warnbox" style="margin:12px">주소검색 서비스를 불러오지 못했습니다. 인터넷 연결을 확인해주세요.</div>';
@@ -267,7 +301,13 @@ function showPostcode(){
         sigungu:data.sigungu || '',
         bname:data.bname || ''
       };
-      save(); renderAddress(); wrap.style.display='none'; lookupFloor(); setTimeout(searchPublicFloorplans,0);
+      saveAddressHistory(state.address);
+      save(); renderAddress(); renderAddressHistory();
+      wrap.style.display='none';
+      const closeBtn=document.getElementById('postcodeCloseBtn');
+      if(closeBtn) closeBtn.style.display='none';
+      lookupFloor();
+      setTimeout(()=>{ go('floor'); searchPublicFloorplans(); },120);
     },
     onresize:function(size){ wrap.style.height=Math.max(420,size.height)+'px'; },
     width:'100%', height:'100%'
@@ -275,17 +315,64 @@ function showPostcode(){
   postcodeEmbedded=true;
 }
 
+
+function closePostcode(){
+  const wrap=document.getElementById('postcodeWrap');
+  if(wrap) wrap.style.display='none';
+  const closeBtn=document.getElementById('postcodeCloseBtn');
+  if(closeBtn) closeBtn.style.display='none';
+}
+function selectHistoryAddress(i){
+  const h=getAddressHistory();
+  if(!h[i])return;
+  state.address={...h[i]};
+  save(); renderAddress(); closePostcode();
+  lookupFloor();
+  setTimeout(()=>{ go('floor'); searchPublicFloorplans(); },120);
+}
+function removeHistoryAddress(i,event){
+  if(event)event.stopPropagation();
+  const h=getAddressHistory(); h.splice(i,1);
+  localStorage.setItem(ADDRESS_HISTORY_KEY,JSON.stringify(h));
+  renderAddressHistory();
+}
+function renderAddressHistory(){
+  const el=document.getElementById('addressHistory'); if(!el)return;
+  const h=getAddressHistory();
+  if(!h.length){el.innerHTML='';return;}
+  el.innerHTML=`<div class="card" style="margin-top:12px"><b>최근 검색 주소</b>
+    ${h.map((a,i)=>`<div class="item" style="cursor:pointer" onclick="selectHistoryAddress(${i})">
+      <div><b>${a.building||a.road}</b><div class="meta">${a.road}</div></div>
+      <button class="smallBtn" onclick="removeHistoryAddress(${i},event)">삭제</button>
+    </div>`).join('')}</div>`;
+}
+
 function renderAddress(){
   const el=document.getElementById('addressInfo');
-  if(!state.address){el.innerHTML='';return;}
+  const fs=document.getElementById('floorStatus');
+  if(!state.address){
+    el.innerHTML='';
+    if(fs) fs.innerHTML='<b>주소를 먼저 선택하세요.</b><p>주소를 선택하면 자동으로 도면 조회 화면으로 이동합니다.</p>';
+    return;
+  }
   const a=state.address;
   el.innerHTML=`<div class="address-card">
     <div class="name">${a.building||'건물명 미표기'}</div>
     <div class="addr"><b>도로명</b> ${a.road}<br>${a.jibun?'<b>지번</b> '+a.jibun+'<br>':''}<b>우편번호</b> ${a.zonecode}</div>
-    <span class="chip">실제 주소 선택 완료</span>
+    <button class="btn" style="margin-top:12px" onclick="goSelectedAddressToFloor()">이 주소로 도면 찾기 →</button>
   </div>`;
   renderBuilding();
   lookupFloor();
+  setTimeout(searchPublicFloorplans,0);
+}
+
+
+function goSelectedAddressToFloor(){
+  if(!state.address){
+    alert('주소를 먼저 선택해주세요.');
+    return;
+  }
+  go('floor');
   setTimeout(searchPublicFloorplans,0);
 }
 
@@ -376,9 +463,35 @@ async function searchPublicFloorplans(){
    return;
  }
  await loadPublicFloorDB();
- const status=document.getElementById('publicFloorStatus'),hits=findFloorHits();
- if(!hits.length){status.innerHTML=`<b>MECCA 도면 DB 검색 완료</b><br><span class="small">현재 검증 DB ${PUBLIC_FLOOR_DB.length}개 단지에서 정확히 일치하는 주소를 찾지 못했습니다. 가짜 도면은 만들지 않습니다.</span>`;return;}
- status.innerHTML=hits.map(({x,dbIndex})=>`<div class="address-card" style="margin-top:8px"><b>${x.agency} · ${x.name}</b><br><span class="small">${x.road}<br>${x.area_range?'전용 '+x.area_range+'㎡<br>':''}${x.attachment||''}</span><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px">${(x.types||[]).map(t=>`<button class="btn soft" style="padding:10px 6px" onclick="selectPublicFloor(${dbIndex},'${t.replace(/'/g,"\'")}')">${t} · ${areaLabel(x,t)}</button>`).join('')||'<span class="small">세부 주택형은 원문 자료에서 확인</span>'}</div></div>`).join('');
+ const status=document.getElementById('publicFloorStatus');
+ const addressStatus=document.getElementById('floorStatus');
+ const hits=findFloorHits();
+ if(!hits.length){
+   const msg=`<b>등록된 검증 도면 없음</b><br><span class="small">현재 MECCA 검증 DB ${PUBLIC_FLOOR_DB.length}개 단지에서 이 주소와 일치하는 자료를 찾지 못했습니다.</span>`;
+   if(status)status.innerHTML=msg;
+   if(addressStatus)addressStatus.innerHTML=msg;
+   return;
+ }
+ const cards=hits.map(({x,dbIndex})=>{
+   const planImage=x.floorplan_asset
+     ? `<img src="${x.floorplan_asset}" alt="${x.name} 실제 도면" style="width:100%;margin-top:10px;border-radius:14px;border:1px solid #ddd">`
+     : '';
+   const typeButtons=(x.types||[]).map(t=>`<button class="btn soft" style="padding:10px 6px" onclick="selectPublicFloor(${dbIndex},'${String(t).replace(/'/g,"\\'")}')">${t} · ${areaLabel(x,t)}</button>`).join('');
+   const sourceBtn=x.source
+     ? `<button class="btn soft" style="margin-top:8px" onclick="window.open('${String(x.source).replace(/'/g,"\\'")}','_blank','noopener')">공식 평면도 원문 보기</button>`
+     : '';
+   return `<div class="address-card" style="margin-top:8px">
+     <b>✅ ${x.name} 도면자료 연결됨</b><br>
+     <span class="small">${x.road||''}${x.area_range?'<br>전용 '+x.area_range+'㎡':''}</span>
+     ${planImage}
+     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px">
+       ${typeButtons||'<span class="small">공식 평면도 자료가 연결되어 있습니다. 세부 주택형은 원문 확인.</span>'}
+     </div>
+     ${sourceBtn}
+   </div>`;
+ }).join('');
+ if(status)status.innerHTML=cards;
+ if(addressStatus)addressStatus.innerHTML=cards+`<button class="btn" style="margin-top:10px" onclick="go('floor')">도면 화면으로 이동</button>`;
 }
 function selectPublicFloor(i,type){
  const x=PUBLIC_FLOOR_DB[i]; if(!x)return; state.floorType=type; state.floorSource=x.source; state.floorVerified=true; save();
