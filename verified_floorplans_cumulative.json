@@ -1,6 +1,6 @@
 {
   "version": "realdata-sweep-v7",
-  "verified_source_record_count": 144,
+  "verified_source_record_count": 145,
   "requested_batch_target": 1000,
   "records": [
     {
@@ -2236,6 +2236,33 @@
       "status": "source_verified_complex_floorplan",
       "verified_at": "2026-09-02",
       "id": "MECCA-REAL-0000144"
+    },
+    {
+      "id": "MECCA-USER-TAECHEON-102A-203",
+      "agency": "user_supplied_official_document",
+      "name": "태천해오름아파트 102동A",
+      "building": "태천해오름아파트 102동A",
+      "road": "서울특별시 강동구 천중로49길 95",
+      "jibun": "서울특별시 강동구 명일동 352-8",
+      "unit": "203호",
+      "floor": "2층",
+      "floorplan_available": true,
+      "floorplan_asset": "assets/taecheon_102A_203_floorplan.jpg",
+      "plan_kind": "건축물현황도 평면도",
+      "scale": "1:150",
+      "verified": true,
+      "status": "user_supplied_official_floorplan",
+      "rooms": [
+        "침실1",
+        "침실2",
+        "침실3",
+        "거실",
+        "주방/식당",
+        "욕실1",
+        "욕실2",
+        "현관"
+      ],
+      "note": "사용자가 제공한 건축물현황도 사진을 MECCA 주소 조회용 실제 도면으로 등록"
     }
   ],
   "note": "Cumulative verified records only. Target 1000 is not padded with fabricated records."
