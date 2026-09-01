@@ -1,0 +1,17 @@
+MECCA MOVE CLEAN DEPLOY
+
+GitHub 저장소 루트에 남길 파일:
+- index.html
+- logo.jpg
+- sw.js
+- taecheon_102A_203_floorplan.jpg
+- verified_floorplans_cumulative.json
+
+삭제할 중복/구버전:
+- index-1.html, index-2.html, index-3.html, index-4.html, index-7.html 등 모든 index-N.html
+- 예전 V14/V15 중복 HTML/압축 업로드 파일
+- 현재 index.html에서 참조하지 않는 임시 파일
+- manifest.json은 이번 정리본에서는 사용하지 않음
+
+주의:
+data/ 폴더가 있다면 root의 verified_floorplans_cumulative.json과 중복 여부를 확인한 뒤 정리.
