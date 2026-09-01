@@ -1,0 +1,16 @@
+{
+  "name": "MECCA MOVE",
+  "short_name": "MECCA MOVE",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f5f0",
+  "theme_color": "#0d4d3b",
+  "icons": [
+    {
+      "src": "assets/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
