@@ -65,7 +65,7 @@ textarea{min-height:80px;resize:vertical}
 <div class="app">
 <header>
   <div class="brand"><img src="logo.jpg"><div><b>MECCA MOVE</b><small>삶의 중심을 옮기다</small></div></div>
-  <span class="badge">V13 · 도면연결 수정</span>
+  <span class="badge">V14 · 주소창 X 수정</span>
 </header>
 
 <main>
@@ -91,7 +91,12 @@ textarea{min-height:80px;resize:vertical}
   <div class="note">실제 우편번호/도로명주소 검색을 사용합니다.</div>
   <button class="btn" style="margin-top:12px" onclick="showPostcode()">실제 주소 검색</button>
   <button id="postcodeCloseBtn" class="btn soft" style="margin-top:8px;display:none" onclick="closePostcode()">주소 검색창 닫기</button>
-  <div id="postcodeWrap"><div id="postcodeBox"></div></div>
+  <div id="postcodeWrap" style="position:relative">
+    <button id="postcodeX" type="button" aria-label="주소 검색 닫기"
+      onclick="closePostcode()"
+      style="display:none;position:absolute;top:10px;right:10px;z-index:9999;width:42px;height:42px;border:0;border-radius:50%;background:#111;color:#fff;font-size:26px;line-height:42px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer">×</button>
+    <div id="postcodeBox"></div>
+  </div>
   <div id="addressHistory"></div>
   <div id="addressInfo"></div>
 
@@ -288,6 +293,8 @@ function showPostcode(){
   wrap.style.display='block';
   const closeBtn=document.getElementById('postcodeCloseBtn');
   if(closeBtn) closeBtn.style.display='block';
+  const x=document.getElementById('postcodeX');
+  if(x) x.style.display='block';
   if(postcodeEmbedded) return;
   if(typeof daum==='undefined' || !daum.Postcode){
     wrap.innerHTML='<div class="warnbox" style="margin:12px">주소검색 서비스를 불러오지 못했습니다. 인터넷 연결을 확인해주세요.</div>';
@@ -309,6 +316,8 @@ function showPostcode(){
       wrap.style.display='none';
       const closeBtn=document.getElementById('postcodeCloseBtn');
       if(closeBtn) closeBtn.style.display='none';
+      const x=document.getElementById('postcodeX');
+      if(x) x.style.display='none';
       lookupFloor();
       setTimeout(()=>{ go('floor'); searchPublicFloorplans(); },120);
     },
@@ -324,6 +333,8 @@ function closePostcode(){
   if(wrap) wrap.style.display='none';
   const closeBtn=document.getElementById('postcodeCloseBtn');
   if(closeBtn) closeBtn.style.display='none';
+  const x=document.getElementById('postcodeX');
+  if(x) x.style.display='none';
 }
 function selectHistoryAddress(i){
   const h=getAddressHistory();
