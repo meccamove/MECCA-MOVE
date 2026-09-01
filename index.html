@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- MECCA MOVE V16: single close control + reliable address-to-floor + Taecheon plan -->
 <html lang="ko">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -89,10 +90,7 @@ textarea{min-height:80px;resize:vertical}
   <button class="btn" style="margin-top:12px" onclick="showPostcode()">실제 주소 검색</button>
   <button id="postcodeCloseBtn" class="btn soft" style="margin-top:8px;display:none" onclick="closePostcode()">주소 검색창 닫기</button>
   <div id="postcodeWrap" style="position:relative">
-    <button id="postcodeX" type="button" aria-label="주소 검색 닫기"
-      onclick="closePostcode()"
-      style="display:none;position:absolute;top:10px;right:10px;z-index:9999;width:42px;height:42px;border:0;border-radius:50%;background:#111;color:#fff;font-size:26px;line-height:42px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer">×</button>
-    <div id="postcodeBox"></div>
+<div id="postcodeBox"></div>
   </div>
   <div id="addressHistory"></div>
   <div id="addressInfo"></div>
@@ -290,8 +288,6 @@ function showPostcode(){
   wrap.style.display='block';
   const closeBtn=document.getElementById('postcodeCloseBtn');
   if(closeBtn) closeBtn.style.display='block';
-  const x=document.getElementById('postcodeX');
-  if(x) x.style.display='block';
   if(postcodeEmbedded) return;
   if(typeof daum==='undefined' || !daum.Postcode){
     wrap.innerHTML='<div class="warnbox" style="margin:12px">주소검색 서비스를 불러오지 못했습니다. 인터넷 연결을 확인해주세요.</div>';
@@ -313,10 +309,7 @@ function showPostcode(){
       wrap.style.display='none';
       const closeBtn=document.getElementById('postcodeCloseBtn');
       if(closeBtn) closeBtn.style.display='none';
-      const x=document.getElementById('postcodeX');
-      if(x) x.style.display='none';
-      lookupFloor();
-      setTimeout(()=>{ go('floor'); searchPublicFloorplans(); },120);
+      go('floor');
     },
     onresize:function(size){ wrap.style.height=Math.max(420,size.height)+'px'; },
     width:'100%', height:'100%'
@@ -330,16 +323,13 @@ function closePostcode(){
   if(wrap) wrap.style.display='none';
   const closeBtn=document.getElementById('postcodeCloseBtn');
   if(closeBtn) closeBtn.style.display='none';
-  const x=document.getElementById('postcodeX');
-  if(x) x.style.display='none';
 }
 function selectHistoryAddress(i){
   const h=getAddressHistory();
   if(!h[i])return;
   state.address={...h[i]};
   save(); renderAddress(); closePostcode();
-  lookupFloor();
-  setTimeout(()=>{ go('floor'); searchPublicFloorplans(); },120);
+  go('floor');
 }
 function removeHistoryAddress(i,event){
   if(event)event.stopPropagation();
@@ -481,6 +471,11 @@ async function loadPublicFloorDB(){
 }
 loadPublicFloorDB().then(()=>{ if(state.address){ lookupFloor(); searchPublicFloorplans(); } });
 function normAddr(v){return (v||'').replace(/특별시|광역시|특별자치시|특별자치도/g,'').replace(/\([^)]*\)/g,'').replace(/[^0-9가-힣A-Za-z]/g,'').toLowerCase();}
+function isTaecheonAddress(){
+  const road=(state.address?.road||'').replace(/\s+/g,' ').trim();
+  const building=state.address?.building||'';
+  return road.includes('천중로49길 95') || (building.includes('태천해오름') && road.includes('95'));
+}
 function areaLabel(x,type){if(x.areas&&x.areas[type]!=null)return x.areas[type]+'㎡'; if(x.area_range)return x.area_range+'㎡'; return '면적은 원문 확인';}
 function findFloorHits(){
  const ar=normAddr(state.address?.road), ab=normAddr(state.address?.building);
@@ -492,9 +487,23 @@ async function searchPublicFloorplans(){
    if(status) status.innerHTML='<b>주소를 먼저 선택하세요.</b>';
    return;
  }
- await loadPublicFloorDB();
  const status=document.getElementById('publicFloorStatus');
  const addressStatus=document.getElementById('floorStatus');
+
+ if(isTaecheonAddress()){
+   const card=`<div class="address-card" style="margin-top:8px">
+     <b>✅ 태천해오름아파트 102동A 실제 도면 연결됨</b><br>
+     <span class="small">서울특별시 강동구 천중로49길 95<br>203호 · 건축물현황도 · 축척 1:150</span>
+     <img src="taecheon_102A_203_floorplan.jpg?v=16" alt="태천해오름아파트 102동A 203호 실제 도면"
+       style="width:100%;margin-top:10px;border-radius:14px;border:1px solid #ddd">
+     <button class="btn" style="margin-top:12px" onclick="useTaecheonPlan()">이 도면 사용하기 →</button>
+   </div>`;
+   if(status) status.innerHTML=card;
+   if(addressStatus) addressStatus.innerHTML=card;
+   return;
+ }
+
+ await loadPublicFloorDB();
  const hits=findFloorHits();
  if(!hits.length){
    const msg=`<b>등록된 검증 도면 없음</b><br><span class="small">현재 MECCA 검증 DB ${PUBLIC_FLOOR_DB.length}개 단지에서 이 주소와 일치하는 자료를 찾지 못했습니다.</span>`;
@@ -503,8 +512,9 @@ async function searchPublicFloorplans(){
    return;
  }
  const cards=hits.map(({x,dbIndex})=>{
-   const planImage=x.floorplan_asset
-     ? `<img src="${x.floorplan_asset}" alt="${x.name} 실제 도면" style="width:100%;margin-top:10px;border-radius:14px;border:1px solid #ddd">`
+   const assetSrc=x.floorplan_asset ? String(x.floorplan_asset).split('/').pop() : '';
+   const planImage=assetSrc
+     ? `<img src="${assetSrc}?v=16" alt="${x.name} 실제 도면" style="width:100%;margin-top:10px;border-radius:14px;border:1px solid #ddd">`
      : '';
    const typeButtons=(x.types||[]).map(t=>`<button class="btn soft" style="padding:10px 6px" onclick="selectPublicFloor(${dbIndex},'${String(t).replace(/'/g,"\\'")}')">${t} · ${areaLabel(x,t)}</button>`).join('');
    const sourceBtn=x.source
