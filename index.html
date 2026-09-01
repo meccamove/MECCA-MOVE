@@ -381,16 +381,15 @@ function lookupFloor(){
   const road=(state.address?.road||'').replace(/\s+/g,' ').trim();
   const building=state.address?.building||'';
 
-  // 검증된 공개 부동산 자료에서 확인된 태천해오름(102동A) 면적 타입.
-  // 평면도 이미지는 공개 자료에서 확인되지 않아 임의 생성하지 않는다.
+  // 사용자가 제공한 공식 건축물현황도: 태천해오름아파트 102동A 203호
   if(road.includes('천중로49길 95') || (building.includes('태천해오름') && road.includes('95'))){
-    const types=['54㎡','68A㎡','68B㎡','78㎡','83㎡','86㎡','90A㎡','93B㎡','93C㎡','95㎡'];
-    status.innerHTML=`<b>태천해오름(102동A) 세대 타입 확인</b>
-      <p class="small">주소와 건물은 확인됐습니다. 아래에서 실제 세대 면적 타입을 선택하세요.</p>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px">
-        ${types.map(t=>`<button class="btn soft" style="padding:12px 8px" onclick="selectVerifiedFloorType('${t}')">${t}</button>`).join('')}
-      </div>
-      <div class="note" style="margin-top:12px">이 건물은 공개 자료에서 면적 타입은 확인되지만 평면도 이미지는 확인되지 않습니다. 타입 선택 후 실제 도면을 등록하면 다음 단계로 이어집니다.</div>`;
+    const planSrc='assets/taecheon_102A_203_floorplan.jpg';
+    status.innerHTML=`<div class="address-card">
+      <b>✅ 태천해오름아파트 실제 세대 도면 연결됨</b>
+      <p class="small">102동A · 203호 · 건축물현황도 · 축척 1:150</p>
+      <img src="${planSrc}?v=12" alt="태천해오름아파트 102동A 203호 실제 건축물현황도" style="width:100%;margin-top:10px;border-radius:14px;border:1px solid #ddd">
+      <button class="btn" style="margin-top:12px" onclick="useTaecheonPlan()">이 도면 사용하기 →</button>
+    </div>`;
     document.getElementById('uploadFloorBtn').style.display='block';
     return;
   }
@@ -399,6 +398,26 @@ function lookupFloor(){
     <p>${state.address?.building||state.address?.road||''}</p>
     <div class="note" style="margin-top:10px">MECCA 검증 도면 DB에서 이 주소를 조회합니다. 등록된 도면이 없으면 임의 도면을 만들지 않고 ‘등록된 검증 도면 없음’으로 표시합니다.</div>`;
   document.getElementById('uploadFloorBtn').style.display='block';
+}
+
+
+function useTaecheonPlan(){
+  state.floor={
+    kind:'image',
+    name:'태천해오름아파트_102동A_203호_건축물현황도.jpg',
+    src:'assets/taecheon_102A_203_floorplan.jpg'
+  };
+  state.floorType='102동A 203호';
+  state.floorVerified=true;
+  state.floorSource='사용자 제공 공식 건축물현황도';
+  state.floorRotation=0;
+  save();
+  const input=document.getElementById('floorType');
+  if(input) input.value=state.floorType;
+  renderFloorPreview();
+  const confirm=document.getElementById('floorConfirm');
+  if(confirm) confirm.style.display='block';
+  go('floor');
 }
 
 function selectVerifiedFloorType(type){
@@ -746,7 +765,7 @@ function exportProject(){
 function renderAll(){ renderAddress(); renderBuilding(); renderFurnitureCards(); renderMoving(); }
 loadSaved();
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=12',{updateViaCache:'none'}).catch(() => {}));
 }
 </script>
 </body>

@@ -1,4 +1,21 @@
-const C='mecca-move-full-v1';
-const A=['./','./index.html','./manifest.json','./logo.jpg'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(A))));
-self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
+const CACHE='mecca-move-v12';
+self.addEventListener('install', event => { self.skipWaiting(); });
+self.addEventListener('activate', event => {
+  event.waitUntil((async()=>{
+    const keys=await caches.keys();
+    await Promise.all(keys.map(k=>caches.delete(k)));
+    await self.clients.claim();
+  })());
+});
+self.addEventListener('fetch', event => {
+  if(event.request.method!=='GET') return;
+  event.respondWith((async()=>{
+    try{
+      return await fetch(event.request,{cache:'no-store'});
+    }catch(e){
+      const cached=await caches.match(event.request);
+      if(cached) return cached;
+      throw e;
+    }
+  })());
+});
